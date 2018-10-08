@@ -41,10 +41,11 @@ mkdir -p ${logLocation}/ComparisonResults
 du -a -k > ${logLocation}/RawData/CurrentResults.log
 
 if [ -x ${previousResultsLoc} ];
-	then du -a -k > ${previousResultsLoc}
+ 	then du -a -k > ${previousResultsLoc}
 fi
 
-##### diff 
+##### diff
+# NEED TO ADD GREP
 diff ${logLocation}/RawData/CurrentResults.log ${previousResultsLoc} > ${diffLoc}
 
 # Overwrite previous results with current results
